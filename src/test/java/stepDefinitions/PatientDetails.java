@@ -290,5 +290,203 @@ public class PatientDetails
 			 
 	    }
 
-	
+	    @Then("^address field is present on patient details page$")
+	    public void address_field_is_present_on_patient_details_page() throws Throwable {
+	String aactual_address=        patientDetailspage.verify_address_field();
+	String Expected_address= "Address Detail";
+	Assert.assertEquals(aactual_address, Expected_address);
+	    }
+	  
+	    
+	    
+	   @When("^user clicks on address edit icon$")
+	    public void user_clicks_on_address_edit_icon() throws Throwable {
+	       patientDetailspage.clickOnAddressIcon();
+	    }
+
+	    @Then("^all labels are displayed correctly on address popup$")
+	    public void all_labels_are_displayed_correctly_on_address_popup() throws Throwable {
+
+Assert.assertEquals(patientDetailspage.verifyActualAllLabelsOfAddressField(), patientDetailspage.expectedAllLabelOfAddressField());
+	    }
+	    
+	    @When("^user clicks on address Add icon$")
+	    public void user_clicks_on_address_add_icon() throws Throwable {
+	       patientDetailspage.clickOnAddressAddIcon();
+	    }
+	    
+	    @Then("^all error messages displayed on address popup$")
+	    public void all_error_messages_displayed_on_address_popup() throws Throwable {
+	        Assert.assertEquals(patientDetailspage.verifyActualErrorMessagesOfAddressField(), patientDetailspage.verifyExpectedErrorMessagesOfAddressField());
+	    }
+
+	    @And("^user click on submit button$")
+	    public void user_click_on_submit_button() throws Throwable {
+	        patientDetailspage.clickOnSubmitButtonOnAddressPopup();
+	    }
+	    
+	    @And("^user enter data in Address fields$")
+	    public void user_enter_data_in_address_fields() throws Throwable {
+	 patientDetailspage.enterAddressinAddressPopup();
+	    }
+	    
+	    @Then("^user address is display on patient detail page$")
+	    public void user_address_is_display_on_patient_detail_page() throws Throwable {
+	      patientDetailspage.verifyAddressOnAddressDetailPage();
+	    }
+	    @Then("^Verify if all patient data points are displaying in All Measurement Section$")
+	    public void verify_if_all_patient_data_points_are_displaying_in_all_measurement_section() throws Throwable {
+	        Assert.assertEquals(patientDetailspage.verifyActualMEasurementDataPoint(), patientDetailspage.verifyExpectedMeasurementDataPoint());
+	    }
+	    
+	    @When("^click on weight info icon$")
+	    public void click_on_weight_info_icon() throws Throwable {
+	    	patientDetailspage.scroll();
+	    	patientDetailspage.clickWeightInfoIcon();
+	    }
+
+	    
+	   
+	    @Then("^weight info article is displaying in all measurement section$")
+	    public void weight_info_article_is_displaying_in_all_measurement_section() throws Throwable {
+	    	Assert.assertEquals(patientDetailspage.verifyWeightinfoMessage(), patientDetailspage.ExpectedWeightInfoMessage());
+
+	    }
+
+	    
+	    @When("^click on heart info icon$")
+	    public void click_on_heart_info_icon() throws Throwable {
+	    	patientDetailspage.scroll();
+	    	patientDetailspage.clickHeartRateInfoIcon();
+	    	
+
+	    }
+
+	    @Then("^heart info article is displaying in all measurement section$")
+	    public void heart_info_article_is_displaying_in_all_measurement_section() throws Throwable {
+	    	Assert.assertEquals(patientDetailspage.verifyHeartrateinfoMessage(), patientDetailspage.ExpectedHeartRateInfoMessage());
+
+
+	    }
+	    @When("^click on BMI info icon$")
+	    public void click_on_bmi_info_icon() throws Throwable {
+	    	patientDetailspage.scroll();
+	    	patientDetailspage.clickBMIInfoIcon();
+	    }
+
+	    @Then("^BMI info article is displaying in all measurement section$")
+	    public void bmi_info_article_is_displaying_in_all_measurement_section() throws Throwable {
+
+	    	Assert.assertEquals(patientDetailspage.verifyBMIinfoMessage(), patientDetailspage.ExpectedBMIInfoMessage());
+	    }
+	    @When("^click on BMR info icon$")
+	    public void click_on_bmr_info_icon() throws Throwable {
+	    	patientDetailspage.scroll();
+	    	patientDetailspage.clickBMRInfoIcon();
+	    }
+
+	    @Then("^BMR info article is displaying in all measurement section$")
+	    public void bmr_info_article_is_displaying_in_all_measurement_section() throws Throwable {
+	    	Assert.assertEquals(patientDetailspage.verifyBMRinfoMessage(), patientDetailspage.ExpectedBMRInfoMessage());
+	    }
+	    @Then("^weightValue with unit is displaying in all measurement section$")
+	    public void value_is_displaying_for_each_data_point_in_all_measurement_section() throws Throwable {
+	    	patientDetailspage.scroll();
+     boolean result = patientDetailspage.verifyWeightValueInAllMeasurement();
+Assert.assertTrue(result);
+	    }
+	   
+	    @Then("^BodyFat Value with unit is displaying in all measurement section$")
+	    public void bodyfat_value_with_unit_is_displaying_in_all_measurement_section() throws Throwable {
+	    	patientDetailspage.scroll();
+	        boolean result = patientDetailspage.verifyBodyFatValueInAllMeasurement();
+	   Assert.assertTrue(result);
+
+	    }
+	    @Then("^visceral Fat Value with unit is displaying in all measurement section$")
+	    public void visceral_fat_value_with_unit_is_displaying_in_all_measurement_section() throws Throwable {
+	    	patientDetailspage.scroll();
+	        boolean result = patientDetailspage.verifyVisceralFatValueInAllMeasurement();
+	   Assert.assertTrue(result);
+	    }
+	    @Then("^Protein Value with unit is displaying in all measurement section$")
+	    public void protein_value_with_unit_is_displaying_in_all_measurement_section() throws Throwable {
+
+	    	patientDetailspage.scroll();
+	        boolean result = patientDetailspage.verifyProteinValueInAllMeasurement();
+	   Assert.assertTrue(result);
+	    }
+
+	    @Then("^BodyType with unit is displaying in all measurement section$")
+	    public void bodytype_with_unit_is_displaying_in_all_measurement_section() throws Throwable {
+	    	patientDetailspage.scroll();
+	        boolean result = patientDetailspage.verifyBodyTypeValueInAllMeasurement();
+	   Assert.assertTrue(result);
+	    }
+	    
+	    @Then("^HeartRate Value with unit is displaying in all measurement section$")
+	    public void heartrate_value_with_unit_is_displaying_in_all_measurement_section() throws Throwable {
+	    	patientDetailspage.scroll();
+	        boolean result = patientDetailspage.verifyHeartRateValueInAllMeasurement();
+	   Assert.assertTrue(result);
+	    }
+	    @Then("^Muscle Mass Value with unit is displaying in all measurement section$")
+	    public void muscle_mass_value_with_unit_is_displaying_in_all_measurement_section() throws Throwable {
+	    	patientDetailspage.scroll();
+	        boolean result = patientDetailspage.verifyMuscleMassValueInAllMeasurement();
+	   Assert.assertTrue(result);
+	    }
+	    @Then("^Bone Mass Value with unit is displaying in all measurement section$")
+	    public void bone_mass_value_with_unit_is_displaying_in_all_measurement_section() throws Throwable {
+	    	patientDetailspage.scroll();
+	        boolean result = patientDetailspage.verifyBoneMassValueInAllMeasurement();
+	   Assert.assertTrue(result);
+
+	    }
+	    @Then("^Subcutaneous Fat Value with unit is displaying in all measurement section$")
+	    public void subcutaneous_fat_value_with_unit_is_displaying_in_all_measurement_section() throws Throwable {
+	    	patientDetailspage.scroll();
+	        boolean result = patientDetailspage.verifySubcutaneousFatValueInAllMeasurement();
+	   Assert.assertTrue(result);
+	    }
+
+	    @Then("^Lean Body Mass Value with unit is displaying in all measurement section$")
+	    public void lean_body_mass_value_with_unit_is_displaying_in_all_measurement_section() throws Throwable {
+	    	patientDetailspage.scroll();
+	        boolean result = patientDetailspage.verifyBodyLeanMassValueInAllMeasurement();
+	   Assert.assertTrue(result);
+	  
+	    }
+	    @Then("^BMI Value with unit is displaying in all measurement section$")
+	    public void bmi_value_with_unit_is_displaying_in_all_measurement_section() throws Throwable {
+	    	patientDetailspage.scroll();
+	        boolean result = patientDetailspage.verifyBMIValueInAllMeasurement();
+	   Assert.assertTrue(result);
+	    }
+	    @Then("^Body water Value with unit is displaying in all measurement section$")
+	    public void body_water_value_with_unit_is_displaying_in_all_measurement_section() throws Throwable {
+	    	patientDetailspage.scroll();
+	        boolean result = patientDetailspage.verifyBodyWaterValueInAllMeasurement();
+	   Assert.assertTrue(result);
+
+	    }
+	    @Then("^BMR Value with unit is displaying in all measurement section$")
+	    public void bmr_value_with_unit_is_displaying_in_all_measurement_section() throws Throwable {
+	    	patientDetailspage.scroll();
+	        boolean result = patientDetailspage.verifyBMRValueInAllMeasurement();
+	   Assert.assertTrue(result);
+	    }
+	    @Then("^Fat Level Value with unit is displaying in all measurement section$")
+	    public void fat_level_value_with_unit_is_displaying_in_all_measurement_section() throws Throwable {
+	    	patientDetailspage.scroll();
+	        boolean result = patientDetailspage.verifyFatLevelValueInAllMeasurement();
+	   Assert.assertTrue(result);
+	    }
+	    @Then("^Standard Weight Value with unit is displaying in all measurement section$")
+	    public void standard_weight_value_with_unit_is_displaying_in_all_measurement_section() throws Throwable {
+	    	patientDetailspage.scroll();
+	        boolean result = patientDetailspage.verifyStandardWeightValueInAllMeasurement();
+	   Assert.assertTrue(result);
+	    }
+
 }

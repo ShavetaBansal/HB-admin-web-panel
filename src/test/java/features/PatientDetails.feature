@@ -5,7 +5,7 @@ Background:
     When user enters valid userID "admin@memorres.com" and password "memorres@007"
     And clicks on login button
     And user logged in sucessfully
-    And user Enters valid input email "akash@memorres.com" in search bar and clicks similar email in data table
+    And user Enters valid input email "testermemor341@gmaiil.com" in search bar and clicks similar email in data table
     Then user redirected to patient details page
 
     #Test-001    
@@ -73,7 +73,7 @@ Background:
      Then verify if Firstname, Lastname, Gender, Date of birth fields with Submit and cancel button are displayed after clicking Edit button of change password
     
     
-    #Test-01
+    #Test-010
        Scenario: Validate Error Messages for Edit dtails page when user clicks on submit with empty First Name, Last Name and Date of Birth fields
     Given user redirected to patient details page
      When user click on edit of patient detail section
@@ -169,10 +169,156 @@ Background:
    Given user redirected to patient details page
    Then validate url, page title and heading of patient details page
    
-  
    
+   #Test-20
+   Scenario: validate if address field is present on patient detail page
+   Given user redirected to patient details page
+   Then address field is present on patient details page
+   
+     #Test-21
+    Scenario: validate if all labels are correctly displayed on address popup of patient detail page
+   Given user redirected to patient details page
+   When user clicks on address edit icon
+   Then all labels are displayed correctly on address popup
+   
+   #Test-22
+   Scenario: Verify error messages if user clicks on submit button on Address Popup of without any input in any fields
+   Given user redirected to patient details page
+   When user clicks on address Add icon
+   And user click on submit button
+   Then all error messages displayed on address popup
+   
+   #Test-23
+    Scenario: Verify user can add address in address popup of patient detail page
+   Given user redirected to patient details page
+   When user clicks on address Add icon
+   And user enter data in Address fields
+   And user click on submit button
+   Then user address is display on patient detail page
+   
+   #Test-24
+    Scenario: Verify All Data points are displaying in All Measurement Section
+   Given user redirected to patient details page
+   Then Verify if all patient data points are displaying in All Measurement Section
+    
+ #Test-25
+    Scenario: Verify weight info article displaying on clicking info icon in All Measurement Section
+   Given user redirected to patient details page
+   When click on weight info icon
+   Then weight info article is displaying in all measurement section
+    
+    #Test-26
+   Scenario: Verify HeartRate info article displaying on clicking info icon in All Measurement Section
+   Given user redirected to patient details page
+   When click on heart info icon
+   Then heart info article is displaying in all measurement section
      
+     #Test-27
+   Scenario: Verify BMI info article displaying on clicking info icon in All Measurement Section
+   Given user redirected to patient details page
+   When click on BMI info icon
+   Then BMI info article is displaying in all measurement section
     
     
+    #Test-28
+   Scenario: Verify BMR info article displaying on clicking info icon in All Measurement Section
+   Given user redirected to patient details page
+   When click on BMR info icon
+   Then BMR info article is displaying in all measurement section
+   
+   
+     #Test-29
     
+    Scenario: Verify weight value is displaying in All Measurement Section
+   Given user redirected to patient details page
+   Then weightValue with unit is displaying in all measurement section
+#Test-30
+   
+    Scenario: Verify BodyFat value is displaying in All Measurement Section
+   Given user redirected to patient details page
+   Then BodyFat Value with unit is displaying in all measurement section
+   
+   #Test-31
+    
+    Scenario: Verify visceralFat value is displaying in All Measurement Section
+   Given user redirected to patient details page
+   Then visceral Fat Value with unit is displaying in all measurement section
+   
+   
+    #Test-32
+ 
+    Scenario: Verify Protein value is displaying in All Measurement Section
+   Given user redirected to patient details page
+   Then Protein Value with unit is displaying in all measurement section
+   
+    #Test-33
+  
+    Scenario: Verify BodyType value is displaying in All Measurement Section
+   Given user redirected to patient details page
+   Then BodyType with unit is displaying in all measurement section
+    
+    
+     
+    #Test-34
+
+    Scenario: Verify HeartRate value is displaying in All Measurement Section
+   Given user redirected to patient details page
+   Then HeartRate Value with unit is displaying in all measurement section
+   
+     #Test-35
+ 
+    Scenario: Verify MuscleMass value is displaying in All Measurement Section
+   Given user redirected to patient details page
+   Then Muscle Mass Value with unit is displaying in all measurement section
+   
+   #Test-36
+
+    Scenario: Verify  Bone Mass value is displaying in All Measurement Section
+   Given user redirected to patient details page
+   Then Bone Mass Value with unit is displaying in all measurement section
+   
+   
+   
+   #Test-37
+
+    Scenario: Verify Subcutaneous Fat value is displaying in All Measurement Section
+   Given user redirected to patient details page
+   Then Subcutaneous Fat Value with unit is displaying in all measurement section
+  
+   #Test-38 
+   
+    Scenario: Verify Lean Body Mass value is displaying in All Measurement Section
+   Given user redirected to patient details page
+   Then Lean Body Mass Value with unit is displaying in all measurement section
+   
+    #Test-39
+  
+    Scenario: Verify BMI value is displaying in All Measurement Section
+   Given user redirected to patient details page
+   Then BMI Value with unit is displaying in all measurement section
+   
+    #Test-40
+   
+    Scenario: Verify Body Water value is displaying in All Measurement Section
+   Given user redirected to patient details page
+   Then Body water Value with unit is displaying in all measurement section
+   
+   #Test-41
+  
+    Scenario: Verify BMR Value is displaying in All Measurement Section
+   Given user redirected to patient details page
+   Then BMR Value with unit is displaying in all measurement section
+   #Test-42
+  
+    Scenario: Verify Fat level value is displaying in All Measurement Section
+   Given user redirected to patient details page
+   Then Fat Level Value with unit is displaying in all measurement section
+   
+   #Test-43
+  
+    Scenario: Verify Standard weight value is displaying in All Measurement Section
+   Given user redirected to patient details page
+   Then Standard Weight Value with unit is displaying in all measurement section
+   
+   
     

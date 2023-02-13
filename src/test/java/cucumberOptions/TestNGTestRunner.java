@@ -4,7 +4,7 @@ import org.testng.annotations.DataProvider;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
-@CucumberOptions(features="src/test/java/features",
+@CucumberOptions(features="src/test/java/features/PatientDetails.feature",
                  glue="stepDefinitions",
                tags="@tagname",
 		         publish = true,
